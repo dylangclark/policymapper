@@ -1,6 +1,78 @@
 B.C. adaptation network explorer
 ===============================
 
+Research-funding tab (2 November 2026)
+------------------------------------
+index.html is the GitHub Pages entry point. It now includes tab 3, Research
+funding, built from research_projects.csv (the supplied
+all_identified_projects_matched_with_grant_dollars(2).csv, unchanged).
+
+Rebuild the complete GitHub page with this command on one line:
+  python build_network.py "bc_adaptation_network_input 1.0.xlsx" --screening "bc_adaptation_outcome_screen 2.0.xlsx" --policies "bc_policy_failures_and_enablers.xlsx" --research research_projects.csv -o index.html
+
+Keep research_funding.py, research_institutions.json and research_treemap.js beside
+the generator and network_template.html. rebuild_network.cmd runs this command.
+The finished index.html embeds all data and scripts; it works offline on its own.
+Commit the regenerated index.html to the GitHub Pages publishing branch to update
+the hosted page. The generator never uploads files or edits source data.
+
+Tab 3 controls:
+- Geography: British Columbia, All Canada, or All source records (including foreign
+  and missing institutions). Default All Canada. BC is the source IS BC flag at
+  award, not project location or current PI affiliation.
+- Lead institutions: Universities only (default) or All lead institutions.
+  Explicit country/type classifications are in research_institutions.json. Missing
+  institutions and four foreign records are excluded from Canadian views. New
+  institution labels stop the build until a lookup is added; they are not silently
+  assumed Canadian. Original institution labels remain in the evidence panel.
+- Group by: Theme -> objective, Objective, University / lead institution, or dollar
+  bands (<$100k; $100k-<$500k; $500k-<$1m; >=$1m).
+- Order groups and projects by dollar value descending/ascending or name A-Z.
+  Change theme or search project title, PI, institution or grant ID.
+- Click group headers or use Focus group to enlarge a subset; All groups resets.
+  Project tiles support hover, keyboard focus/Enter, click and tap. Details retain
+  all CSV fields, grant basis, mapping rationale and verification notes, plus safe
+  evidence links. The project list provides larger targets for tiny rectangles.
+
+Accounting and interpretation:
+- Objective means the CSV's Primary outcome statement. One record goes to one
+  primary objective/theme. Additional linked outcomes do not duplicate dollars.
+  Research objectives are preserved verbatim; they are not forced into network
+  outcome IDs or silently rematched to a different outcome workbook.
+- Award totals, fiscal 2024 payments, one-time supplements, annual supplements and
+  unconfirmed periods are separate selectable bases. Awards are the default.
+  All reported values is explicitly mixed and is not a comparable spending total.
+  Values are not annualized or multiplied by award term. Individual/trainee awards,
+  provisional relevance and other source categories remain and are visible in
+  details. They should not all be described as faculty project grants.
+- Missing is not zero: unvalued records are counted and listed in each basis view;
+  no rectangle area is invented. Zero values are listed without area. Integer
+  cents are used for accounting. Duplicate funder/grant IDs stop generation.
+- The source has 186 records, 185 values and one missing value. Its mixed-basis
+  total reconciles to $47,398,097.99. Canadian universities: 165 records; BC
+  universities: 47 records. Default award subset: 69 valued records / $23,569,592
+  across Canada, and 23 / $8,399,643 in BC, plus the unvalued record in each view.
+- This is a screened inventory with mixed award years and provisional objective
+  matches, not a funding census or evidence of research gaps, effects or impact.
+- Treemap outer group areas follow funding; nested headers/padding take some
+  display space. Project areas within a group are proportional to selected values.
+  Sorting repacks rectangles; geometric reading order is not a ranked list.
+- Network/count theme controls apply only to tabs 1 and 2. Research has independent
+  filters and includes all research themes present in the CSV.
+
+Checks:
+  python -m unittest discover -s . -p "test_*.py"
+  node test_research_ui.cjs
+The Python suite covers accounting, scope, unknown institutions, duplicate IDs,
+invalid money, no secondary-outcome duplication and no annualization. The Node
+suite runs the embedded scripts for all groupings, orderings, scopes and bases,
+checks value-proportional nonoverlapping packing, tooltips/details, empty states,
+and preservation of the 903 network edges and 856 policy associations.
+Real Chrome checks also covered tab navigation, Canada/BC totals, grouping,
+funding bases, project evidence, focus tooltips, group drill-down and empty search.
+
+Previous network documentation follows. Commands without --research omit tab 3.
+
 The generated adaptation_network.html is self-contained. Open it in a current
 Chrome, Edge, Firefox or Safari browser. It works offline with no automatic
 external requests. Policy-source links open only when clicked.

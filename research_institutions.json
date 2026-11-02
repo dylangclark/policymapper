@@ -1,0 +1,222 @@
+{
+  "Alberta Health Services": {
+    "country": "canada",
+    "university": false
+  },
+  "Athabasca University (Alberta)": {
+    "country": "canada",
+    "university": true
+  },
+  "B.C. Centre for Disease Control (Vancouver)": {
+    "country": "canada",
+    "university": false
+  },
+  "Canadian Red Cross Society (Ottawa, Ontario)": {
+    "country": "canada",
+    "university": false
+  },
+  "Carleton University": {
+    "country": "canada",
+    "university": true
+  },
+  "Carleton University (Ottawa)": {
+    "country": "canada",
+    "university": true
+  },
+  "Columbia University (New York)": {
+    "country": "international",
+    "university": true
+  },
+  "Dalhousie University": {
+    "country": "canada",
+    "university": true
+  },
+  "HEC Montréal": {
+    "country": "canada",
+    "university": true
+  },
+  "Hospital for Sick Children (Toronto)": {
+    "country": "canada",
+    "university": false
+  },
+  "Lakehead University": {
+    "country": "canada",
+    "university": true
+  },
+  "Laurentian University": {
+    "country": "canada",
+    "university": true
+  },
+  "Manitoba Health": {
+    "country": "canada",
+    "university": false
+  },
+  "McGill University": {
+    "country": "canada",
+    "university": true
+  },
+  "McMaster University": {
+    "country": "canada",
+    "university": true
+  },
+  "Memorial University of Newfoundland": {
+    "country": "canada",
+    "university": true
+  },
+  "Montreal Heart Institute": {
+    "country": "canada",
+    "university": false
+  },
+  "Mount Allison University": {
+    "country": "canada",
+    "university": true
+  },
+  "Nova Scotia Health Authority (Halifax)": {
+    "country": "canada",
+    "university": false
+  },
+  "Organisation for Economic Co-operation and Development (Paris, France)": {
+    "country": "international",
+    "university": false
+  },
+  "Ottawa Hospital Research Institute": {
+    "country": "canada",
+    "university": false
+  },
+  "Queen's University": {
+    "country": "canada",
+    "university": true
+  },
+  "Queen's University (Kingston, Ontario)": {
+    "country": "canada",
+    "university": true
+  },
+  "Research Institute of the McGill University Health Centre": {
+    "country": "canada",
+    "university": false
+  },
+  "Royal Roads University": {
+    "country": "canada",
+    "university": true
+  },
+  "Simon Fraser University": {
+    "country": "canada",
+    "university": true
+  },
+  "The University of Western Ontario": {
+    "country": "canada",
+    "university": true
+  },
+  "Thompson Rivers University": {
+    "country": "canada",
+    "university": true
+  },
+  "Toronto Metropolitan University": {
+    "country": "canada",
+    "university": true
+  },
+  "University Health Network (Toronto)": {
+    "country": "canada",
+    "university": false
+  },
+  "University of Alberta": {
+    "country": "canada",
+    "university": true
+  },
+  "University of British Columbia": {
+    "country": "canada",
+    "university": true
+  },
+  "University of Calgary": {
+    "country": "canada",
+    "university": true
+  },
+  "University of Guelph": {
+    "country": "canada",
+    "university": true
+  },
+  "University of Manitoba": {
+    "country": "canada",
+    "university": true
+  },
+  "University of Northern British Columbia": {
+    "country": "canada",
+    "university": true
+  },
+  "University of Ottawa": {
+    "country": "canada",
+    "university": true
+  },
+  "University of Prince Edward Island": {
+    "country": "canada",
+    "university": true
+  },
+  "University of Saskatchewan": {
+    "country": "canada",
+    "university": true
+  },
+  "University of Sydney (N.S.W., Australia)": {
+    "country": "international",
+    "university": true
+  },
+  "University of Toronto": {
+    "country": "canada",
+    "university": true
+  },
+  "University of Toronto Scarborough (ON)": {
+    "country": "canada",
+    "university": true
+  },
+  "University of Victoria": {
+    "country": "canada",
+    "university": true
+  },
+  "University of Waterloo": {
+    "country": "canada",
+    "university": true
+  },
+  "University of Waterloo (Ontario)": {
+    "country": "canada",
+    "university": true
+  },
+  "University of Windsor": {
+    "country": "canada",
+    "university": true
+  },
+  "Université de Montréal": {
+    "country": "canada",
+    "university": true
+  },
+  "Université du Québec à Chicoutimi": {
+    "country": "canada",
+    "university": true
+  },
+  "Université du Québec à Montréal": {
+    "country": "canada",
+    "university": true
+  },
+  "Vancouver Coastal Health Authority": {
+    "country": "canada",
+    "university": false
+  },
+  "Western University": {
+    "country": "canada",
+    "university": true
+  },
+  "Western University (The University of Western Ontario)": {
+    "country": "canada",
+    "university": true
+  },
+  "Wilfrid Laurier University": {
+    "country": "canada",
+    "university": true
+  },
+  "York University": {
+    "country": "canada",
+    "university": true
+  },
+  "École de technologie supérieure": {
+    "country": "canada",
+    "university": true
+  }
+}

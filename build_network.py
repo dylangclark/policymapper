@@ -4,6 +4,7 @@
 Usage: python build_network.py "bc_adaptation_network_input 1.0.xlsx" -o adaptation_network.html
        Add --screening "bc_adaptation_outcome_screen.xlsx" to sort and colour outcomes.
        Add --policies "bc_policy_failures_and_enablers.xlsx" for policy-name bubbles.
+       Add --research "research_projects.csv" for the funding treemap.
 Requires Python 3.9+ and openpyxl. No browser libraries or network access required.
 """
 import argparse
@@ -11,6 +12,7 @@ import json
 import re
 import sys
 from pathlib import Path
+from research_funding import add_research
 
 HTML_TEMPLATE = Path(__file__).with_name("network_template.html").read_text(encoding="utf-8")
 
@@ -341,6 +343,7 @@ def main():
     parser.add_argument('workbook', type=Path)
     parser.add_argument('--screening', type=Path, help='Outcome screening workbook with four 1–3 rating columns')
     parser.add_argument('--policies', type=Path, help='Consolidated policy workbook containing Policies and Policy-outcome links tables')
+    parser.add_argument('--research', type=Path, help='Research-project CSV with primary outcome matches and grant values')
     parser.add_argument('-o', '--output', type=Path, default=Path('adaptation_network.html'))
     args = parser.parse_args()
     try:
@@ -349,7 +352,10 @@ def main():
             add_screening(data, args.screening)
         if args.policies:
             add_policies(data, args.policies)
+        if args.research:
+            add_research(data, args.research)
         template = HTML_TEMPLATE
+        template = template.replace('__RESEARCH_JS__', Path(__file__).with_name('research_treemap.js').read_text(encoding='utf-8'))
         # Prevent workbook text from terminating the inert JSON script element.
         payload = json.dumps(data, ensure_ascii=False).replace('&', '\\u0026').replace('<', '\\u003c').replace('>', '\\u003e')
         args.output.parent.mkdir(parents=True, exist_ok=True)
